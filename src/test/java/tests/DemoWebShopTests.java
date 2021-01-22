@@ -19,6 +19,8 @@ public class DemoWebShopTests {
                 .post("/addproducttocart/details/1/2")
                 .then()
                 .statusCode(200)
-                .body("message", equalTo("The product has been added to your <a href=\"/wishlist\">wishlist</a>"));
+                .body("message", equalTo("The product has been added to your <a href=\"/wishlist\">wishlist</a>"))
+                .body("success", equalTo(true))
+                .body("updatetopwishlistsectionhtml", equalTo("(1)"));
     }
 }
